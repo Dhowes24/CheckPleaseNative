@@ -1,14 +1,12 @@
 import React from 'react';
 import { StyleSheet,Button, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import CaptureScreen from './Components/CaptureScreen';
 
 
 class App extends React.Component {
   render() {
     return (
-        <Image
-            style={HomeBackground.container}
-            source={}
       <View style={HomeBackground.container}>
         <Text>Open up App.js to start working on your app!</Text>
           <Button
@@ -46,15 +44,15 @@ class AccountPage extends React.Component {
         );
     }
 }
-class CaptureScreen extends React.Component {
-    render() {
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> CaptureScreen </Text>
-            </View>
-        );
-    }
-}
+// class CaptureScreen extends React.Component {
+//     render() {
+//         return (
+//             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//                 <Text> CaptureScreen </Text>
+//             </View>
+//         );
+//     }
+// }
 
 export default createStackNavigator({
     Home: {
