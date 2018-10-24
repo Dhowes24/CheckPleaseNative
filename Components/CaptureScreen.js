@@ -8,6 +8,7 @@ export default class CaptureScreen extends React.Component {
     state = {
         hasCameraPermission: null,
         type: Camera.Constants.Type.back,
+        actualPhoto: null,
     };
 
     async componentWillMount() {
@@ -15,38 +16,23 @@ export default class CaptureScreen extends React.Component {
         this.setState({hasCameraPermission: status === 'granted'});
     }
 
-    componentDidMount() {
-        FileSystem.makeDirectoryAsync(FileSystem.documentDirectory + 'photos').catch(e => {
-            console.log(e, 'Directory exists');
-        });
-    }
-
-    takePicture = async() => {
-        console.log(this.camera)
+    takePicture = async () => {
+        console.log('pressed');
         if (this.camera) {
-            this.camera.takePictureAsync({ onPictureSaved: this.onPictureSaved });
-        }
-        else {
-            console.log('camera no operino')
+            let photo = await this.camera.takePictureAsync();
+            console.log(photo.uri);
+            this.setState({actualPhoto: photo})
         }
     };
-
-    handleMountError = ({ message }) => console.error(message);
-
-    onPictureSaved = async photo => {
-        await FileSystem.moveAsync({
-            from: photo.uri,
-            to: `${FileSystem.documentDirectory}photos/${Date.now()}.jpg`,
-        });
-        this.setState({ newPhotos: true });
-    }
 
     renderCamera = () =>
         (
             <View style={{flex: 1}}>
                 <Camera
                     style={{flex: 1}}
-                    type={this.state.type}>
+                    type={this.state.type}
+                    ref={ref => { this.camera = ref; }}
+                >
                     <View
                         style={{
                             flex: 1,
@@ -60,7 +46,9 @@ export default class CaptureScreen extends React.Component {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                             }}
-                            onPress={this.takePicture}>
+                            onPress={() => {
+                                this.takePicture()
+                            }}>
                             <Text
                                 style={{fontSize: 18, marginBottom: 10, color: 'white'}}>
                                 {' '}TakePicture{' '}
