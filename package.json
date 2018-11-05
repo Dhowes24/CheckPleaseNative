@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "eject": "expo eject"
   },
-  "proxy": "http://localhost:3001", //localhost # has to match port assigned upon backend start
+
   "dependencies": {
     "@google-cloud/storage": "^2.1.0",
     "axios": "^0.18.0",
