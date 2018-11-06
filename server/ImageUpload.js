@@ -1,8 +1,8 @@
 
-const Storage = require('@google-cloud/storage');
+const {Storage} = require('@google-cloud/storage');
 const fs = require('fs');
 
-const gcs = Storage({
+const gcs = new Storage({
     projectId: 'checkplease-218202',
     keyFilename: '~/Desktop/CheckPlease/App/CheckPleaseNative/CheckPlease-dd7b5e658c4f.json'
 });

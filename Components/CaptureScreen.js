@@ -72,7 +72,7 @@ export default class CaptureScreen extends React.Component {
         // Instantiate a FormData() object
         const imgBody = new FormData();
         imgBody.append('image', photo);
-        const url = `http://your-api.com/image-upload`;
+        const url = `http://your-api.com/image-upload`; //Change to localhost once you can figure it out ## I think
         // Perform the request. Note the content type - very important
         fetch(url, {
             method: 'POST',

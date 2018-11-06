@@ -11,11 +11,7 @@ app.listen(port, function () {
     console.log("Server running on port", port);
 });
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", ejs);
-app.engine("html", require("ejs").renderFile);
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use("/image-upload", Router);
+app.use("/", Router);
