@@ -13,5 +13,10 @@ app.listen(port, function () {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+// Store the single image in memory.
+let latestPhoto = null;
+
+// Upload the latest photo for this session
 
 app.use("/", Router);
+

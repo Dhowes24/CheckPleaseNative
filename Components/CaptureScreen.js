@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet, Button, Text, View, TouchableOpacity} from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 import axios from 'axios';
+import { Asset, ImageManipulator } from 'expo';
+import base64 from 'base64-js'
 
 import {Camera, Permissions, FileSystem} from 'expo';
 
@@ -20,8 +22,12 @@ export default class CaptureScreen extends React.Component {
     takePicture = async () => {
         console.log('pressed');
         if (this.camera) {
-            let photo = await this.camera.takePictureAsync();
-            this.uploadPhoto(photo)
+            this.camera.takePictureAsync(
+                {base64: true,
+                }).then(newPhoto => {
+                    this.uploadPhoto(newPhoto.base64);
+            })
+            //this.uploadPhoto(bitPhoto);
         }
     };
     renderCamera = () =>
@@ -69,26 +75,11 @@ export default class CaptureScreen extends React.Component {
     }
 
     uploadPhoto(photo) {
-        // Instantiate a FormData() object
-        const imgBody = new FormData();
-        imgBody.append('image', photo);
-        const url = `http://your-api.com/image-upload`; //Change to localhost once you can figure it out ## I think
-        // Perform the request. Note the content type - very important
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'multipart/form-data',
-            },
-            body: imgBody
-        }).then((response) => {
             let body = {
                 "requests": [
                     {
                         "image": {
-                            "source": {
-                                "imageUri": response
-                            } //Needs to be either, 64-bit (Can't fucking do in expo), public URL, or in Google storage
+                            "content": photo//Needs to be either, 64-bit, public URL, or in Google storage
 
                         },
                         "features": [
@@ -105,7 +96,6 @@ export default class CaptureScreen extends React.Component {
                 .then(function (response) {
                     console.log(response.data)
                 })
-        })
     };
 
     render() {
