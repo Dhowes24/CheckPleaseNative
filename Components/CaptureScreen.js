@@ -2,10 +2,8 @@ import React from 'react';
 import {StyleSheet, Button, Text, View, TouchableOpacity} from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 import axios from 'axios';
-import { Asset, ImageManipulator } from 'expo';
-import base64 from 'base64-js'
 
-import {Camera, Permissions, FileSystem} from 'expo';
+import {Camera, Permissions, FileSystem, ImagePicker} from 'expo';
 
 //API KEY
 const cloudVisionKey = 'AIzaSyAubtQznQNsxlTo-jU79XtShR8_Iz_wPaI';
@@ -16,55 +14,64 @@ const cloudvision = 'https://vision.googleapis.com/v1/images:annotate?key=' + cl
 
 export default class CaptureScreen extends React.Component {
     state = {
+        image: null,
         hasCameraPermission: null,
+        hasCamera_rollPermission: null,
         type: Camera.Constants.Type.back,
     };
     takePicture = async () => {
         console.log('pressed');
-        if (this.camera) {
-            this.camera.takePictureAsync(
-                {base64: true,
-                }).then(newPhoto => {
-                    this.uploadPhoto(newPhoto.base64);
-            })
-            //this.uploadPhoto(bitPhoto);
+        let photo = await ImagePicker.launchCameraAsync({
+            allowsEditing:true,
+            base64:true,
+        });
+        if (!photo.cancelled) {
+            this.uploadPhoto(photo.base64);
         }
+        // if (this.camera) {
+        //     this.camera.takePictureAsync(
+
+        //         {base64: true,}
+        //         ).then(newPhoto => {
+        //             this.uploadPhoto(newPhoto.base64);
+        //     })
+        // }
     };
-    renderCamera = () =>
-        (
-            <View style={{flex: 1}}>
-                <Camera
-                    style={{flex: 1}}
-                    type={this.state.type}
-                    ref={ref => {
-                        this.camera = ref;
-                    }}
-                >
-                    <View
-                        style={{
-                            flex: 1,
-                            backgroundColor: 'transparent',
-                            flexDirection: 'row',
-                        }}>
-                        <TouchableOpacity
-                            style={{
-                                flex: 0.1,
-                                alignSelf: 'flex-end',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                            onPress={() => {
-                                this.takePicture()
-                            }}>
-                            <Text
-                                style={{fontSize: 18, marginBottom: 10, color: 'white'}}>
-                                {' '}TakePicture{' '}
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                </Camera>
-            </View>
-        );
+    // renderCamera = () =>
+    //     (
+    //         <View style={{flex: 1}}>
+    //             <Camera
+    //                 style={{flex: 1}}
+    //                 type={this.state.type}
+    //                 ref={ref => {
+    //                     this.camera = ref;
+    //                 }}
+    //             >
+    //                 <View
+    //                     style={{
+    //                         flex: 1,
+    //                         backgroundColor: 'transparent',
+    //                         flexDirection: 'row',
+    //                     }}>
+    //                     <TouchableOpacity
+    //                         style={{
+    //                             flex: 0.1,
+    //                             alignSelf: 'flex-end',
+    //                             alignItems: 'center',
+    //                             justifyContent: 'center',
+    //                         }}
+    //                         onPress={() => {
+    //                             this.takePicture()
+    //                         }}>
+    //                         <Text
+    //                             style={{fontSize: 18, marginBottom: 10, color: 'white'}}>
+    //                             {' '}TakePicture{' '}
+    //                         </Text>
+    //                     </TouchableOpacity>
+    //                 </View>
+    //             </Camera>
+    //         </View>
+    //     );
 
 
     //Vision Area
@@ -72,6 +79,10 @@ export default class CaptureScreen extends React.Component {
     async componentWillMount() {
         const {status} = await Permissions.askAsync(Permissions.CAMERA);
         this.setState({hasCameraPermission: status === 'granted'});
+        const {status_Roll} = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        this.setState({hasCamera_rollPermission: status_Roll === 'granted'});
+
+
     }
 
     uploadPhoto(photo) {
@@ -79,7 +90,7 @@ export default class CaptureScreen extends React.Component {
                 "requests": [
                     {
                         "image": {
-                            "content": photo//Needs to be either, 64-bit, public URL, or in Google storage
+                            "content": photo
 
                         },
                         "features": [
@@ -94,20 +105,34 @@ export default class CaptureScreen extends React.Component {
 
             axios.post(cloudvision, body)
                 .then(function (response) {
-                    console.log(response.data)
+                    console.log(response)
                 })
     };
 
     render() {
-        const {hasCameraPermission} = this.state;
-        if (hasCameraPermission === null) {
-            return <View/>;
-        } else if (hasCameraPermission === false) {
-            return <Text>No access to camera</Text>;
-        } else {
-            return (
-                this.renderCamera()
-            );
-        }
-    };
+        //This lets me preview but not crop vv
+    //     const {hasCameraPermission} = this.state;
+    //     if (hasCameraPermission === null) {
+    //         return <View/>;
+    //     } else if (hasCameraPermission === false) {
+    //         return <Text>No access to camera</Text>;
+    //     } else {
+    //         return (
+    //             this.renderCamera()
+    //         );
+    //     }
+    // };
+        let { image } = this.state;
+
+        return (
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Button
+                    title="Take Picture"
+                    onPress={this.takePicture}
+                />
+                {image &&
+                <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+            </View>
+        );
+    }
 }
