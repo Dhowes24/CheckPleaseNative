@@ -9,7 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/filesystem" level="application" />
-    <orderEntry type="library" name="@types/base64-js" level="application" />
     <orderEntry type="library" name="@types/expo" level="application" />
+    <orderEntry type="library" name="@types/axios-token-interceptor" level="application" />
   </component>
 </module>

@@ -96,21 +96,24 @@ export default class CaptureScreen extends React.Component {
                         "features": [
                             {
                                 "type": "TEXT_DETECTION",
-                                "maxResults": 1
+                                "maxResults":1
                             }
                         ]
                     }
                 ]
             };
 
-            axios.post(cloudvision, body)
-                .then(function (response) {
-                    console.log(response)
-                })
+        axios.post(cloudvision, body)
+            .then(function (response) {
+                let text = response.data.responses[0];
+                for (let i = 1; i < text.textAnnotations.length ; i++) {
+                    console.log(response.data.responses[0].textAnnotations[i].description.toLowerCase())
+                }
+            })
     };
 
     render() {
-        //This lets me preview but not crop vv
+        //This lets me previ ew but not crop vv
     //     const {hasCameraPermission} = this.state;
     //     if (hasCameraPermission === null) {
     //         return <View/>;
