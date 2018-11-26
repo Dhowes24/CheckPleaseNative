@@ -22,8 +22,8 @@ export default class CaptureScreen extends React.Component {
     takePicture = async () => {
         console.log('pressed');
         let photo = await ImagePicker.launchCameraAsync({
-            allowsEditing:true,
-            base64:true,
+            allowsEditing: true,
+            base64: true,
         });
         if (!photo.cancelled) {
             this.uploadPhoto(photo.base64);
@@ -86,55 +86,73 @@ export default class CaptureScreen extends React.Component {
     }
 
     uploadPhoto(photo) {
-            let body = {
-                "requests": [
-                    {
-                        "image": {
-                            "content": photo
+        let body = {
+            "requests": [
+                {
+                    "image": {
+                        "content": photo
 
-                        },
-                        "features": [
-                            {
-                                "type": "TEXT_DETECTION",
-                                "maxResults":1
-                            }
-                        ]
-                    }
-                ]
-            };
+                    },
+                    "features": [
+                        {
+                            "type": "TEXT_DETECTION",
+                            "maxResults": 1
+                        }
+                    ]
+                }
+            ]
+        };
 
         axios.post(cloudvision, body)
             .then(function (response) {
                 let text = response.data.responses[0];
-                for (let i = 1; i < text.textAnnotations.length ; i++) {
-                    console.log(response.data.responses[0].textAnnotations[i].description.toLowerCase())
+                let coveredText = [];
+                for (let i = 0; i < text.textAnnotations.length; i++) {
+                    coveredText.push(0);
                 }
+                for (let i = 1; i < text.textAnnotations.length; i++) {
+                    let currentLine = text.textAnnotations[i].description;
+                    if (coveredText[i] == 0){
+                        let upperY = text.textAnnotations[i].boundingPoly.vertices[0].y;
+                        for (let j = i+1; j < text.textAnnotations.length; j++) {
+                            if (text.textAnnotations[j].boundingPoly.vertices[0].y - upperY <= 10 && text.textAnnotations[j].boundingPoly.vertices[0].y - upperY >= -10){
+                                currentLine = currentLine + " " +text.textAnnotations[j].description;
+                                coveredText[j] = 1;
+                            }
+                        }
+                        console.log(currentLine);
+                        coveredText[i] = 1;
+                    }
+                }
+                //console.log(response.data.responses[0].textAnnotations[i].description.toLowerCase())
+
             })
+
     };
 
     render() {
         //This lets me previ ew but not crop vv
-    //     const {hasCameraPermission} = this.state;
-    //     if (hasCameraPermission === null) {
-    //         return <View/>;
-    //     } else if (hasCameraPermission === false) {
-    //         return <Text>No access to camera</Text>;
-    //     } else {
-    //         return (
-    //             this.renderCamera()
-    //         );
-    //     }
-    // };
-        let { image } = this.state;
+        //     const {hasCameraPermission} = this.state;
+        //     if (hasCameraPermission === null) {
+        //         return <View/>;
+        //     } else if (hasCameraPermission === false) {
+        //         return <Text>No access to camera</Text>;
+        //     } else {
+        //         return (
+        //             this.renderCamera()
+        //         );
+        //     }
+        // };
+        let {image} = this.state;
 
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                 <Button
                     title="Take Picture"
                     onPress={this.takePicture}
                 />
                 {image &&
-                <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                <Image source={{uri: image}} style={{width: 200, height: 200}}/>}
             </View>
         );
     }
