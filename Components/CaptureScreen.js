@@ -22,7 +22,6 @@ export default class CaptureScreen extends React.Component {
     takePicture = async () => {
         console.log('pressed');
         let photo = await ImagePicker.launchCameraAsync({
-            allowsEditing: true,
             base64: true,
         });
         if (!photo.cancelled) {

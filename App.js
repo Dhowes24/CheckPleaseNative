@@ -2,70 +2,34 @@ import React from 'react';
 import { StyleSheet,Button, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import CaptureScreen from './Components/CaptureScreen';
+import HomeScreen from './Components/HomeScreen';
+import LoginScreen from './Components/LoginScreen';
 
 
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-      <View style={HomeBackground.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-          <Button
-              title="New Receipt"
-              onPress={() => this.props.navigation.navigate('CaptureScreen')}
-          />
-          <Button
-              title="Pending Receipt"
-              onPress={() => this.props.navigation.navigate('ReceiptsPage')}
-          />
-          <Button
-              title="Account"
-              onPress={() => this.props.navigation.navigate('AccountPage')}
-          />
-      </View>
+      <AppNavigator/>
     );
   }
 }
 
-class ReceiptsPage extends React.Component {
-    render() {
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> ReceiptsPage </Text>
-            </View>
-        );
-    }
-}
-class AccountPage extends React.Component {
-    render() {
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> AccountPage </Text>
-            </View>
-        );
-    }
-}
-// class CaptureScreen extends React.Component {
-//     render() {
-//         return (
-//             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//                 <Text> CaptureScreen </Text>
-//             </View>
-//         );
-//     }
-// }
 
-export default createStackNavigator({
+const AppNavigator = createStackNavigator({
     Home: {
-        screen: App,
+        screen: LoginScreen,
+    },
+    HomeScreen:{
+      screen: HomeScreen,
     },
     CaptureScreen: {
         screen: CaptureScreen,
     },
-    ReceiptsPage: {
-        screen: ReceiptsPage,
-    },
-    AccountPage: {
-        screen: AccountPage,},
+    // ReceiptsPage: {
+    //     screen: ReceiptsPage,
+    // },
+    // AccountPage: {
+    //     screen: AccountPage,},
 }, {
     initialRouteName: 'Home',
 });
