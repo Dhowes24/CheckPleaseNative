@@ -4,12 +4,18 @@ import { createStackNavigator } from 'react-navigation';
 import CaptureScreen from './Components/CaptureScreen';
 import HomeScreen from './Components/HomeScreen';
 import LoginScreen from './Components/LoginScreen';
+import ReceiptsPage from "./Components/ReceiptsPage";
+import AccountPage from "./Components/AccountPage";
+import PasswordChange from "./Components/PasswordChange";
+import {Root} from "native-base"
 
 
 export default class App extends React.Component {
   render() {
     return (
+        <Root>
       <AppNavigator/>
+        </Root>
     );
   }
 }
@@ -25,11 +31,14 @@ const AppNavigator = createStackNavigator({
     CaptureScreen: {
         screen: CaptureScreen,
     },
-    // ReceiptsPage: {
-    //     screen: ReceiptsPage,
-    // },
-    // AccountPage: {
-    //     screen: AccountPage,},
+    ReceiptsPage: {
+        screen: ReceiptsPage,
+    },
+    AccountPage: {
+        screen: AccountPage,},
+    PasswordChange: {
+        screen: PasswordChange,
+    },
 }, {
     initialRouteName: 'Home',
 });

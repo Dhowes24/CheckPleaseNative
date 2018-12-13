@@ -16,6 +16,7 @@
     "expo": "^31.0.4",
     "express": "^4.16.4",
     "link": "^0.1.5",
+    "native-base": "^2.8.1",
     "nodejs-mobile-react-native": "^0.3.0",
     "react": "16.5.0",
     "react-cloud-vision-api": "^0.3.0",
