@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component {
                 />
                 <Button
                     title="Pending Receipt"
-                    onPress={() => this.props.navigation.navigate('ReceiptsPage')}
+                    onPress={() => this.props.navigation.navigate('PendingMeals')}
                 />
                 <Button
                     title="Account"

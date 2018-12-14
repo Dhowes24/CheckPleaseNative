@@ -7,6 +7,7 @@ import LoginScreen from './Components/LoginScreen';
 import ReceiptsPage from "./Components/ReceiptsPage";
 import AccountPage from "./Components/AccountPage";
 import PasswordChange from "./Components/PasswordChange";
+import PendingMeals from "./Components/PendingMeals";
 import {Root} from "native-base"
 
 
@@ -35,9 +36,13 @@ const AppNavigator = createStackNavigator({
         screen: ReceiptsPage,
     },
     AccountPage: {
-        screen: AccountPage,},
+        screen: AccountPage,
+    },
     PasswordChange: {
         screen: PasswordChange,
+    },
+    PendingMeals:{
+        screen: PendingMeals,
     },
 }, {
     initialRouteName: 'Home',
