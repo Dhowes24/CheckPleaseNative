@@ -1,7 +1,5 @@
 import {Image, ImageBackground, StyleSheet, View, FlatList, ActivityIndicator} from "react-native";
 
-
-
 import {
     Container, Content,
 } from 'native-base'

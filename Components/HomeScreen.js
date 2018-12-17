@@ -4,8 +4,8 @@ import CaptureScreen from './CaptureScreen';
 
 
 export default class HomeScreen extends React.Component {
-    static navigationOptions ={
-        header:null
+    static navigationOptions = {
+        header: null
     };
 
     render() {
@@ -14,37 +14,41 @@ export default class HomeScreen extends React.Component {
                              style={{width: '100%', height: '100%'}}>
                 <Image
                     source={require('../assets/Home_Page_Logo.png')}
-                    style={{alignContent:'center', marginTop: '10%', marginLeft: '17.5%', width: '65%', height:'35%'}}>
+                    style={{
+                        alignContent: 'center',
+                        marginTop: '10%',
+                        marginLeft: '17.5%',
+                        width: '65%',
+                        height: '35%'
+                    }}>
                 </Image>
-            <View style={HomeBackground.container}>
-                <View style={HomeBackground.buttonBorder}>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('CaptureScreen')}
-                >
-                    <Text style={HomeBackground.clickableText}>
-                        New Receipt
-                    </Text>
-                </TouchableOpacity>
+                <View style={HomeBackground.container}>
+                    <View style={HomeBackground.buttonBorder}>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('CaptureScreen')}>
+                            <Text style={HomeBackground.clickableText}>
+                                New Receipt
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={HomeBackground.buttonBorder}>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('PendingMeals')}
+                        >
+                            <Text style={HomeBackground.clickableText}>
+                                Pending Receipt
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={HomeBackground.buttonBorder}>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('AccountPage')}>
+                                <Text style={HomeBackground.clickableText}>
+                                    Account
+                                </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={HomeBackground.buttonBorder}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('PendingMeals')}
-                    >
-                        <Text style={HomeBackground.clickableText}>
-                            Pending Receipt
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={HomeBackground.buttonBorder}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('AccountPage')}
-                    >
-                        <Text style={HomeBackground.clickableText}>
-                            Account
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
             </ImageBackground>
         );
     }
@@ -55,19 +59,23 @@ const HomeBackground = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop:'-60%'
+        marginTop: '-60%'
     },
-    buttonBorder:{
-        borderColor:'brown',
+    buttonBorder: {
+        borderColor: 'brown',
         borderWidth: 3,
-        width:'65%',
-        height:'7%',
+        width: '65%',
+        height: '7%',
         alignContent: 'center',
         alignItems: 'center',
-        marginTop: '3%'
+        marginTop: '3%',
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
     },
-    clickableText:{
+    clickableText: {
         fontSize: 20,
-        marginTop: '5%'
+        marginTop: '5%',
     }
 });

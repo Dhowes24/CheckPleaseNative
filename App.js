@@ -9,6 +9,7 @@ import AccountPage from "./Components/AccountPage";
 import PasswordChange from "./Components/PasswordChange";
 import PendingMeals from "./Components/PendingMeals";
 import {Root} from "native-base"
+import SpecificMealPage from "./Components/SpecificMealPage";
 
 
 export default class App extends React.Component {
@@ -43,6 +44,9 @@ const AppNavigator = createStackNavigator({
     },
     PendingMeals:{
         screen: PendingMeals,
+    },
+    SpecificMealPage:{
+        screen: SpecificMealPage,
     },
 }, {
     initialRouteName: 'Home',

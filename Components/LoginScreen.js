@@ -39,6 +39,8 @@ class LoginScreen extends Component {
                                 console.log(responseJSON);
                             })
                         } />
+                <Button title="Test SpecificMeal Format"
+                        onPress={() => this.props.navigation.navigate('SpecificMealPage')} />
             </View>
             </ImageBackground>
         );
