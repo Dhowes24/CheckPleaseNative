@@ -3,13 +3,16 @@ import {
     View,
     Text,
     StyleSheet,
-    Image, ImageBackground
+    Image, ImageBackground, TouchableOpacity
 } from "react-native";
 
 import {Container, Content, Card, CardItem, Body, Left, Right, Button, Footer, Icon} from 'native-base'
 
 export default class AccountPage extends React.Component {
 //Call Database and Fill in accordingly
+    static navigationOptions = {
+        header: null
+    };
     state = {
         //User
         //Password
@@ -21,16 +24,18 @@ export default class AccountPage extends React.Component {
         return (
             <ImageBackground source={require('../assets/Mobile_background.png')}
                              style={{width: '100%', height: '100%'}}>
-
-                <Content style={{
-                    marginTop: '30%',
-                    marginBottom: '10%',
-                    left: '5%',
-                    width: '90%',
-                    height: '100%',
-                    flex: 1,
-                    backgroundColor: 'white'
-                }}>
+                <View style={styles.PageView}>
+                    <TouchableOpacity onPress={() =>
+                        this.props.navigation.navigate('HomeScreen')}
+                                      style={styles.BackButton}>
+                        <Image source={require('../assets/Back_arrow.png')}
+                               style={styles.BackButtonImage}/>
+                    </TouchableOpacity>
+                    <Text style={styles.TitleText}>
+                        Account
+                    </Text>
+                </View>
+                <Content style={styles.Screen}>
                     <Button full={true} transparent={true} style={{height: 100}}>
                         <Left>
                             <Text style={styles.baseText}>
@@ -77,6 +82,20 @@ export default class AccountPage extends React.Component {
     //decide on that later
 }
 const styles = StyleSheet.create({
+    PageView: {
+        height: '18%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    Screen: {
+        marginTop: '11%',
+        marginBottom: '10%',
+        left: '5%',
+        width: '90%',
+        height: '100%',
+        flex: 1,
+        backgroundColor: 'white'
+    },
     baseText: {
         fontSize: 30,
         paddingLeft: '5%'
@@ -88,5 +107,19 @@ const styles = StyleSheet.create({
     },
     barStyle: {
         width: '90%', height: '0.75%', marginTop: '-8%', marginLeft: '5%'
+    },
+    BackButton: {
+        marginTop: '15%',
+        marginLeft: '5%',
+    },
+    BackButtonImage: {
+        width: 30,
+        height: 30
+    },
+    TitleText: {
+        fontSize: 50,
+        color: 'white',
+        marginTop: '10%',
+        marginRight:'25%',
     }
 });

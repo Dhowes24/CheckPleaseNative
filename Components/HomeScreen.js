@@ -14,13 +14,7 @@ export default class HomeScreen extends React.Component {
                              style={{width: '100%', height: '100%'}}>
                 <Image
                     source={require('../assets/Home_Page_Logo.png')}
-                    style={{
-                        alignContent: 'center',
-                        marginTop: '10%',
-                        marginLeft: '17.5%',
-                        width: '65%',
-                        height: '35%'
-                    }}>
+                    style={HomeBackground.logo}>
                 </Image>
                 <View style={HomeBackground.container}>
                     <View style={HomeBackground.buttonBorder}>
@@ -77,5 +71,12 @@ const HomeBackground = StyleSheet.create({
     clickableText: {
         fontSize: 20,
         marginTop: '5%',
+    },
+    logo:{
+        alignContent: 'center',
+        marginTop: '10%',
+        marginLeft: '17.5%',
+        width: '65%',
+        height: '35%'
     }
 });

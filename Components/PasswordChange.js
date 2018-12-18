@@ -1,18 +1,8 @@
 import React from "react";
 import {
-    Container,
     Content,
-    Card,
-    CardItem,
     Body,
-    Button,
-    Form,
-    Item,
-    Input,
     Toast,
-    Left,
-    Right,
-    Icon
 } from 'native-base'
 import {
     TextInput,
@@ -26,32 +16,35 @@ import {
 
 export default class PasswordChange extends React.Component {
     state = {
-        //User
-        //Password
-        //Phone
+        User: this.props.user,
+        Password: this.props.password,
+        Phone: this.props.phone,
         currentPassword: '',
         newPassword: '',
         reEnterPassword: '',
     };
 
     static navigationOptions = {
-        headerStyle: {}
+        header:null
     };
 
     render() {
         return (
             <ImageBackground source={require('../assets/Mobile_background.png')}
                              style={{width: '100%', height: '100%'}}>
-
-                <Content style={{
-                    marginTop: '30%',
-                    marginBottom: '10%',
-                    left: '5%',
-                    width: '90%',
-                    flex: 1,
-                    backgroundColor: 'white',
-                    scrollEnabled: false,
-                }}>
+                <View style={styles.PageView}>
+                    <TouchableOpacity  onPress={() =>
+                        this.props.navigation.navigate('AccountPage')
+                    }
+                                       style={styles.BackButton}>
+                        <Image source={require('../assets/Back_arrow.png')}
+                               style={styles.BackButtonImage}/>
+                    </TouchableOpacity>
+                    <Text style={styles.TitleText}>
+                        Password
+                    </Text>
+                </View>
+                <Content style={styles.Screen}>
                     <Body style={styles.formStyle}>
                     <TextInput placeholderTextColor={'darkgrey'} autoCorrect={false} secureTextEntry={true} placeholder="Enter Current Password"
                                onChangeText={(password) => this.onChangeCurrent(password)}
@@ -81,10 +74,18 @@ export default class PasswordChange extends React.Component {
                                         text: "New passwords do not match!",
                                         duration: 2000
                                     })
-                                } else if (this.state.currentPassword) {
-                                    //TODO after acessing Database, Check Database for correct Password
+                                } else if (this.state.currentPassword !== this.state.Password) {
+                                    //Password stored from AsyncStorage and passed in as prop through app
                                     Toast.show({
                                         text: "Current password incorrect",
+                                        duration: 2000
+                                    })
+                                } else{
+                                    //Change Password for user in database
+                                        //Find way to pass password back
+                                            //Maybe in go back function
+                                    Toast.show({
+                                        text: "Password successfully changed",
                                         duration: 2000
                                     })
                                 }
@@ -139,11 +140,45 @@ const styles = StyleSheet.create({
         alignContent: 'left',
         width: '90%'
     },
+    Screen:{
+        marginTop: '11%',
+        marginBottom: '10%',
+        left: '5%',
+        width: '90%',
+        flex: 1,
+        backgroundColor: 'white',
+        scrollEnabled: false,
+    },
     textInputStyle: {
         fontSize: 18,
-        autoCorrect: false, secureTextEntry: true, alignSelf: 'flex-start', left: '4%'
+        autoCorrect: false,
+        secureTextEntry: true,
+        alignSelf: 'flex-start',
+        left: '4%'
     },
     barStyle: {
-        width: '90%', height: '0.75%', marginTop: '0%', marginLeft: '5%'
+        width: '90%',
+        height: '0.75%',
+        marginTop: '0%',
+        marginLeft: '5%'
+    },
+    BackButton: {
+        marginTop:'15%',
+        marginLeft: '5%'
+    },
+    BackButtonImage: {
+        width:30,
+        height:30
+    },
+    PageView: {
+        height: '18%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    TitleText: {
+        fontSize: 50,
+        color: 'white',
+        marginTop: '10%',
+        marginRight:'22%',
     }
 });

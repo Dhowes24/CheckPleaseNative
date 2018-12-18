@@ -50,7 +50,7 @@ class SpecificMealCard extends Component {
                         </View>
                         <TouchableOpacity onPress={() => {
                             //Are You Sure Modal
-                            //Learn to make
+                                //Learn to make
                             //Modal Deletes from Database and calls again then sets state
                         }}
                         >

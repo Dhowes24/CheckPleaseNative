@@ -10,6 +10,11 @@ import {
 import {Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon} from "native-base";
 
 class PendingMealsCards extends Component {
+
+    state={
+        //All Meal Data for Queries
+    };
+
     render() {
 
         return (
@@ -28,7 +33,7 @@ class PendingMealsCards extends Component {
                     <Right>
                         <TouchableOpacity onPress={() => {
                             //Get meal Info
-                            //Render SpecificMealPage with Data associated the click
+                                //Render SpecificMealPage with Data associated the click
                         }}
                                           style={styles.iconStyle}>
                             <Image source={require('../assets/info_icon.png')}/>

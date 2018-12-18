@@ -1,8 +1,9 @@
 import React from "react";
-import {ActivityIndicator, FlatList, ImageBackground, StyleSheet, View} from "react-native";
+import {ActivityIndicator, FlatList, ImageBackground, StyleSheet, View, Image, TouchableOpacity,} from "react-native";
 import SpecificMealCard from "./SpecificMealCard";
 import ParticipantCard from "./ParticipantCard";
-import {Text} from "react-native-elements";
+import {Icon, Text} from "react-native-elements";
+import * as navigation from "react-native";
 
 export default class SpecificMealPage extends React.Component {
 
@@ -12,9 +13,11 @@ export default class SpecificMealPage extends React.Component {
 
     state = {
         mealData: [{Meal: 'crackersfsadasdasvafads', Price: '4.50'}, {Meal: 'Cheese', Price: '6.00'}],
-        participants: [{Name: 'REmmy', Number: 7213123}, {Name: 'Alex', Number: 7818016768}, {Name: 'REmmy', Number: 7213123
+        participants: [{Name: 'REmmy', Number: 7213123}, {Name: 'Alex', Number: 7818016768}, {
+            Name: 'REmmy', Number: 7213123
         }],
         loading: true,
+        title: this.props.eventName
     };
 
     //All Names must be attributed to 'value' for dropdown to read it
@@ -37,13 +40,35 @@ export default class SpecificMealPage extends React.Component {
         return (
             <ImageBackground source={require('../assets/Mobile_background.png')}
                              style={{width: '100%', height: '100%'}}>
-
                 <View style={styles.PageView}>
+                    <TouchableOpacity onPress={() =>
+                        this.props.navigation.navigate('HomeScreen')
+                    }
+                                      style={styles.BackButton}>
+                        <Image source={require('../assets/Back_arrow.png')}
+                               style={styles.BackButtonImage}/>
+                    </TouchableOpacity>
+                    <Text style={styles.TitleText}>
+                        {this.state.title != null ? this.state.title : 'Untitled'}
+                    </Text>
                 </View>
                 <View style={styles.ParticipantsView}>
-                    <Text style={styles.ParticipantsText}>
-                        Participants
-                    </Text>
+                    <View style={styles.ParticipantHeaderView}>
+                        <Text style={styles.ParticipantsText}>
+                            Participants
+                        </Text>
+                        <TouchableOpacity onPress={() =>
+                        {
+                            //Open Form to enter new name and number
+                                //or choose from contacts
+                            //Add to participant Array and insert with Query
+                                //Then re-render
+                        }}>
+                            <Text style={styles.EditText}>
+                                Edit
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
                     <FlatList
                         data={this.state.participants}
                         renderItem={({item}) => (
@@ -74,8 +99,10 @@ export default class SpecificMealPage extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    PageView:{
-      height:'18%'
+    PageView: {
+        height: '18%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     ParticipantsView: {
         left: '2.5%',
@@ -84,11 +111,21 @@ const styles = StyleSheet.create({
         flex: 0,
         backgroundColor: 'white',
     },
-    ParticipantsText:{
-      marginLeft: '5%',
-        marginTop:'2%',
-        fontSize:20,
-        fontWeight:'bold'
+    ParticipantHeaderView: {
+        flexDirection: 'row'
+    },
+    ParticipantsText: {
+        marginLeft: '5%',
+        marginTop: '2%',
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    EditText: {
+        marginLeft: '60%',
+        marginTop: '3%',
+        fontSize: 18,
+        textDecorationLine: 'underline',
+        color: 'darkblue'
     },
     MealsView: {
         marginTop: '5%',
@@ -108,7 +145,21 @@ const styles = StyleSheet.create({
     },
     FlatListStyle: {
         marginTop: '5%',
-
+    },
+    BackButton: {
+        marginTop: '15%',
+        marginLeft: '5%'
+    },
+    BackButtonImage: {
+        width: 30,
+        height: 30
+    },
+    TitleText: {
+        fontSize: 50,
+        color: 'white',
+        marginTop: '10%',
+        marginLeft: '10%',
+        marginRight: '25%',
     }
 
 });

@@ -1,4 +1,4 @@
-import {Image, ImageBackground, StyleSheet, View, FlatList, ActivityIndicator} from "react-native";
+import {Image, ImageBackground, StyleSheet, View, FlatList, ActivityIndicator, TouchableOpacity} from "react-native";
 
 import {
     Container, Content,
@@ -7,7 +7,7 @@ import {
 import React from "react";
 import PendingMealsCards from './PendingMealsCards'
 import TouchableItem from "react-navigation/src/views/TouchableItem";
-import {List , ListItem} from "react-native-elements"
+import {List, ListItem, Text} from "react-native-elements"
 
 
 export default class PendingMeals extends React.Component {
@@ -18,6 +18,10 @@ state={
     loading:true
 
 };
+
+    static navigationOptions = {
+        header:null
+    };
 
 componentDidMount() {
     //Make Request for Owned & UnOwned Data
@@ -47,14 +51,19 @@ renderFooter = () => {
         return (
             <ImageBackground source={require('../assets/Mobile_background.png')}
                              style={{width: '100%', height: '100%'}}>
-                <View style={{
-                    marginTop:'10%',
-                    left: '2.5%',
-                    height: '10%',
-                    width: '95%',
-                    flex:0,
-                    backgroundColor: 'white',
-                }}>
+                <View style={styles.PageView}>
+                    <TouchableOpacity  onPress={() =>
+                        this.props.navigation.navigate('HomeScreen')
+                    }
+                                       style={styles.BackButton}>
+                        <Image source={require('../assets/Back_arrow.png')}
+                               style={styles.BackButtonImage}/>
+                    </TouchableOpacity>
+                    <Text style={styles.TitleText}>
+                        PendingMeals
+                    </Text>
+                </View>
+                <View style={styles.Toggle}>
                     <TouchableItem onPress={() => {
                         this.setState({owned: !this.state.owned})}
                     } >
@@ -99,10 +108,34 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex:0,
         width: '70%',
-        height: '110%',
+        height: '85%',
         marginLeft: '15%',
         top: '20%'
-
-
+    },
+    Toggle:{
+        left: '2.5%',
+        height: '10%',
+        width: '95%',
+        flex:0,
+        backgroundColor: 'white',
+    },
+    BackButton: {
+        marginTop:'15%',
+        marginLeft: '5%'
+    },
+    BackButtonImage: {
+        width:30,
+        height:30
+    },
+    PageView: {
+        height: '18%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    TitleText: {
+        fontSize: 40,
+        color: 'white',
+        marginTop: '13%',
+        marginRight:'15%',
     }
 });
