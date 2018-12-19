@@ -24,6 +24,10 @@ export default class PasswordChange extends React.Component {
         reEnterPassword: '',
     };
 
+    changePassword(){
+        //
+    }
+
     static navigationOptions = {
         header:null
     };

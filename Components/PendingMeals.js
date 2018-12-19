@@ -13,8 +13,8 @@ import {List, ListItem, Text} from "react-native-elements"
 export default class PendingMeals extends React.Component {
 state={
     owned: true,
-    ownedData: [{EventName: 'PoolParty', DateTime: '4/20 - 4:20', EventID: 1}, {EventName: 'PoolParty', DateTime: '4/23 - 4:20', EventID: 1}],
-    unOwnedData: [],
+    ownedData: [{EventName: 'PoolParty', DateTime: '4/20 - 4:20', EventID: 1}, {EventName: 'PoolParty', DateTime: '4/23 - 4:20', EventID: 2}],
+    unOwnedData: [{EventName: 'Jakes Pool Party', DateTime:'3/27 - 2:30', EventID: 3}],
     loading:true
 
 };
@@ -23,7 +23,26 @@ state={
         header:null
     };
 
-componentDidMount() {
+    componentWillMount() {
+        //UnOwnedEventsList.php
+            //Parameters[AdminContact, Phone]
+        //Parse Return JSON
+
+        //OwnedEventsList.php
+            //Parameters[AdminContact]
+        //Parse Return JSON
+
+    }
+
+    parseOwned(){
+        //set State after parse
+    }
+
+    parseUnOwned(){
+        //set State after parse
+    }
+
+    componentDidMount() {
     //Make Request for Owned & UnOwned Data
         //Put into respective arrays
 

@@ -19,6 +19,22 @@ export default class CaptureScreen extends React.Component {
         hasCamera_rollPermission: null,
         type: Camera.Constants.Type.back,
     };
+
+    CreateEvent(){
+        //Call after During OCR JSON retrieval
+            //CreateEventPHP
+                //Parameters[EventName = Null, Data, AdminContact, Date, Time]
+        //Get EventID from above parameters ^
+            //addParticipantPHP
+                //Parameters[Contact, ParticipantName, EventID]
+            //Loop
+                //addMealPHP for each meal
+                    //Parameters [Meal_Owner, Meal_Name, Meal_Price, EventID]
+        // Navigate to Specific Meal Page
+            //Props [EventID]
+
+    }
+
     takePicture = async () => {
         console.log('pressed');
         let photo = await ImagePicker.launchCameraAsync({

@@ -12,6 +12,8 @@ export default class SpecificMealPage extends React.Component {
     };
 
     state = {
+        EventID: this.props.EventID,
+
         mealData: [{Meal: 'crackersfsadasdasvafads', Price: '4.50'}, {Meal: 'Cheese', Price: '6.00'}],
         participants: [{Name: 'REmmy', Number: 7213123}, {Name: 'Alex', Number: 7818016768}, {
             Name: 'REmmy', Number: 7213123
@@ -22,9 +24,27 @@ export default class SpecificMealPage extends React.Component {
 
     //All Names must be attributed to 'value' for dropdown to read it
 
-    componentDidMount() {
+    componentWillMount() {
+        //Call getParticipantsList.php
+            //Parameters [EventID]
+            //call parseMealData() with JSON
 
+        //Call getMealList.php
+            //Parameters [EventID]
+            //call parseParticipantData() with JSON
+    }
+
+    componentDidMount() {
         this.setState({loading: false})
+            //SetState with all new Data^^
+    }
+
+    parseMealData(MealData){
+
+    }
+
+    parseParticipantData(ParticipantData){
+
     }
 
     renderFooter = () => {
