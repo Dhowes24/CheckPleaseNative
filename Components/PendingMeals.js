@@ -35,10 +35,12 @@ state={
     }
 
     parseOwned(){
+        const currentData = [];
         //set State after parse
     }
 
     parseUnOwned(){
+        const currentData = [];
         //set State after parse
     }
 

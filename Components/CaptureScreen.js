@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Button, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Button, Text, View, Image, TouchableOpacity, ImageBackground} from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 import axios from 'axios';
 
@@ -13,11 +13,17 @@ const cloudvision = 'https://vision.googleapis.com/v1/images:annotate?key=' + cl
 
 
 export default class CaptureScreen extends React.Component {
+
+    static navigationOptions = {
+        header:null
+    };
+
     state = {
         image: null,
         hasCameraPermission: null,
         hasCamera_rollPermission: null,
         type: Camera.Constants.Type.back,
+        mealData:[]
     };
 
     CreateEvent(){
@@ -161,14 +167,89 @@ export default class CaptureScreen extends React.Component {
         let {image} = this.state;
 
         return (
-            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <Button
-                    title="Take Picture"
-                    onPress={this.takePicture}
-                />
+            <ImageBackground source={require('../assets/Mobile_background.png')}
+                             style={{width: '100%', height: '100%'}}>
+                <View style={styles.PageView}>
+                    <TouchableOpacity  onPress={() =>
+                        this.props.navigation.navigate('HomeScreen')
+                    }
+                                       style={styles.BackButton}>
+                        <Image source={require('../assets/Back_arrow.png')}
+                               style={styles.BackButtonImage}/>
+                    </TouchableOpacity>
+                    <Text style={styles.TitleText}>
+                        Take Picture
+                    </Text>
+                </View>
+                <View style={styles.content}>
+                <Image source={require('../assets/PictureCaptureOnBoarding.png')}
+                style={styles.onBoarding}>
+                </Image>
+            <View style={styles.buttonBorder}>
+                <TouchableOpacity
+                    onPress={() => this.takePicture()}>
+                    <Text style={styles.clickableText}>
+                        Take Picture
+                    </Text>
+                </TouchableOpacity>
                 {image &&
                 <Image source={{uri: image}} style={{width: 200, height: 200}}/>}
             </View>
+                </View>
+            </ImageBackground>
         );
     }
 }
+const styles = StyleSheet.create({
+    content:{
+        marginTop: '6%',
+        marginBottom: '10%',
+        left: '5%',
+        width: '90%',
+        flex: 1,
+        backgroundColor: 'white',
+        scrollEnabled: false,
+    },
+    buttonBorder: {
+        marginTop:'10%',
+        borderColor: 'brown',
+        borderWidth: 3,
+        alignSelf:'center',
+        flex:0,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10
+    },
+    onBoarding:{
+        marginTop: '30%',
+        alignSelf: 'center',
+        width:'100%',
+        height:'40%',
+        flex:0
+    },
+    PageView: {
+        height: '18%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    BackButton: {
+        marginTop:'15%',
+        marginLeft: '5%'
+    },
+    BackButtonImage: {
+        width:30,
+        height:30
+    },
+    TitleText: {
+        fontSize: 40,
+        color: 'white',
+        marginTop: '10%',
+        marginLeft: '10%',
+        marginRight: '25%',
+    },
+    clickableText: {
+        fontSize: 20,
+        marginTop: '5%',
+    },
+});

@@ -86,7 +86,7 @@ export default class PasswordChange extends React.Component {
                                     })
                                 } else{
                                     //Change Password for user in database
-                                        //Find way to pass password back
+                                        //Find way to pass password back through app
                                             //Maybe in go back function
                                     Toast.show({
                                         text: "Password successfully changed",
@@ -155,8 +155,6 @@ const styles = StyleSheet.create({
     },
     textInputStyle: {
         fontSize: 18,
-        autoCorrect: false,
-        secureTextEntry: true,
         alignSelf: 'flex-start',
         left: '4%'
     },
