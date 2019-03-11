@@ -104,7 +104,7 @@ class LoginScreen extends Component {
                     this.setState({Login:!this.state.Login})}/>
                 <Button title="testDB"
                         onPress={() =>
-                        fetch('104.196.70.252/createEvent.php',{
+                        fetch('104.196.70.252/hello.php',{
                             method: 'post',
                             header:{
                                 'Accept': 'application/json',

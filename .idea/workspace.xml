@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3953327a-772e-4bc1-b1ca-708213fcf4e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Components/SummaryCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/CaptureScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/CaptureScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/PasswordChange.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/PasswordChange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/PendingMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/PendingMeals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/SpecificMealCard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/SpecificMealPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/SpecificMealPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Components/LoginScreen.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,10 +17,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Components/PendingMealsCards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Components/CaptureScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-524">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="75">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/global-types/node_modules/@types/expo/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28185">
+              <caret line="1905" column="10" selection-start-line="1905" selection-start-column="10" selection-end-line="1905" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Components/PendingMeals.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="60" selection-start-column="60" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Components/HomeScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="57" selection-start-line="57" selection-end-line="69" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -36,66 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Components/SpecificMealPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3095">
-              <caret line="221" column="68" selection-start-line="221" selection-start-column="68" selection-end-line="221" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#8443#11262#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Components/PendingMeals.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/PendingMealsCards.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/ParticipantCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="54" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/SummaryCard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/PasswordChange.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+            <state relative-caret-position="345">
+              <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -106,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Components/LoginScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="1039">
+              <caret line="151" column="32" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -115,14 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/HomeScreen.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="57" selection-start-line="57" selection-end-line="69" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="43" selection-start-line="5" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -146,6 +122,8 @@
       <find>login</find>
       <find>SpecificMealCard</find>
       <find>Meal</find>
+      <find>?</find>
+      <find>setS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,12 +153,12 @@
         <option value="$PROJECT_DIR$/Components/AccountPage.js" />
         <option value="$PROJECT_DIR$/Components/PendingMealsCards.js" />
         <option value="$PROJECT_DIR$/Components/HomeScreen.js" />
-        <option value="$PROJECT_DIR$/Components/LoginScreen.js" />
         <option value="$PROJECT_DIR$/Components/SpecificMealCard.js" />
         <option value="$PROJECT_DIR$/Components/CaptureScreen.js" />
         <option value="$PROJECT_DIR$/Components/PasswordChange.js" />
         <option value="$PROJECT_DIR$/Components/SpecificMealPage.js" />
         <option value="$PROJECT_DIR$/Components/SummaryCard.js" />
+        <option value="$PROJECT_DIR$/Components/LoginScreen.js" />
         <option value="$PROJECT_DIR$/Components/PendingMeals.js" />
       </list>
     </option>
@@ -192,9 +170,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
     <option name="y" value="23" />
-    <option name="width" value="1309" />
+    <option name="width" value="1418" />
     <option name="height" value="848" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -214,11 +191,6 @@
               <item name="CheckPleaseNative" type="b2602c69:ProjectViewProjectNode" />
               <item name="CheckPleaseNative" type="462c0819:PsiDirectoryNode" />
               <item name=".expo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CheckPleaseNative" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CheckPleaseNative" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CheckPleaseNative" type="b2602c69:ProjectViewProjectNode" />
@@ -257,6 +229,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -317,12 +290,30 @@
       <workItem from="1542562623657" duration="33523000" />
       <workItem from="1543432722368" duration="7761000" />
       <workItem from="1544500147411" duration="51052000" />
-      <workItem from="1544909837981" duration="59737000" />
+      <workItem from="1544909837981" duration="61395000" />
+      <workItem from="1545588328242" duration="93000" />
+      <workItem from="1545617222166" duration="36000" />
+      <workItem from="1546028128351" duration="167000" />
+      <workItem from="1546028411198" duration="172000" />
+      <workItem from="1546471179975" duration="352000" />
+      <workItem from="1548823749241" duration="9000" />
+      <workItem from="1548826068185" duration="206000" />
+      <workItem from="1548826287999" duration="326000" />
+      <workItem from="1548872400799" duration="2906000" />
+      <workItem from="1548878430848" duration="1278000" />
+      <workItem from="1548880112153" duration="4764000" />
+      <workItem from="1549045751381" duration="4197000" />
+      <workItem from="1549398476281" duration="1242000" />
+      <workItem from="1550429743604" duration="1823000" />
+      <workItem from="1550436230786" duration="1183000" />
+      <workItem from="1551481067301" duration="642000" />
+      <workItem from="1551554254103" duration="213000" />
+      <workItem from="1552333682650" duration="447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241382000" />
+    <option name="totallyTimeSpent" value="263096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -334,10 +325,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="23" width="1309" height="848" extended-state="0" />
+    <frame x="0" y="23" width="1418" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26863354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19183965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -351,7 +342,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50035995" side_tool="true" weight="0.3903134" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49964002" weight="0.22486773" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49964002" visible="true" weight="0.17592593" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -447,16 +439,7 @@
     <entry file="file://$PROJECT_DIR$/Components/ReceiptsPage.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Components/ParticipantsCards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="37" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/ParticipantsCards.js" />
     <entry file="file://$PROJECT_DIR$/assets/Back_arrow.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -479,46 +462,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/LoginScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/SpecificMealCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-769">
-          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/HomeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="57" selection-start-line="57" selection-end-line="69" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/SpecificMealCard.js" />
     <entry file="file://$PROJECT_DIR$/Components/PasswordChange.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
@@ -539,16 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Components/CaptureScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-524">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/ParticipantCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -559,31 +493,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Components/SpecificMealPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3095">
-          <caret line="221" column="68" selection-start-line="221" selection-start-column="68" selection-end-line="221" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#8443#11262#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/PendingMealsCards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="165">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Components/CaptureScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/global-types/node_modules/@types/expo/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28185">
+          <caret line="1905" column="10" selection-start-line="1905" selection-start-column="10" selection-end-line="1905" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Components/PendingMeals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state>
+          <caret column="60" selection-start-column="60" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/HomeScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="57" selection-start-line="57" selection-end-line="69" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/SpecificMealPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/LoginScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1039">
+          <caret line="151" column="32" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="43" selection-start-line="5" selection-end-line="6" />
         </state>
       </provider>
     </entry>
